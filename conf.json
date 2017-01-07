@@ -1,0 +1,15 @@
+{
+    "author": "Ehsan Hussain",
+    "email": "shahid@digitalent.com",
+    "siteTitle": "Just a JavaScript developer",
+    "description": "",
+    "googleTrackingCode": "",
+    "usernames": {
+        "twitter": "ehsanh06",
+        "linkedin": "",
+        "instagram": "",
+        "github": "ehsanh06"
+    },
+    "recentPostsLimit": 5,
+    "currentMenuClass": "menu-item__current"
+}

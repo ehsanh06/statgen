@@ -13,7 +13,6 @@ var moment      = require('moment');
 var rename      = require('gulp-rename');
 var requireDir  = require('require-dir');
 var rmrf        = require('rimraf');
-var sass        = require('gulp-sass');
 var s3          = require('gulp-s3');
 
 var conf        = require('./conf.json');
@@ -26,7 +25,14 @@ var paths = {
     drafts: './views/drafts/',
     layouts: './views/',
     // includes: './includes/',             Come back to this
-    sass: './src/sass/**/*.scss',
+    sass: './public/src/sass/**/*.scss',
     dist: './dist/',
     distCss: './dist/css/'
+}
+
+// Specifying the sass file and minified CSS file
+var sass  = require('gulp-sass');
+var files = {
+    sass: './src/sass/style.scss',
+    css: 'style.min.css'
 }

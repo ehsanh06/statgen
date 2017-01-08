@@ -5,6 +5,7 @@ var fs      = require('fs');
 var gulp    = require('gulp');
 var mkdirp  = require('mkdirp');
 
+var statgen = require('./statgen');
 
 // Task which takes care of the actual site build itself
 gulp.task('site-build', function() {

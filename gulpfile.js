@@ -13,10 +13,12 @@ var moment      = require('moment');
 var rename      = require('gulp-rename');
 var requireDir  = require('require-dir');
 var rmrf        = require('rimraf');
+var sass        = require('gulp-sass');
 // var s3       = require('gulp-s3');               Optional
 
 var conf        = require('./conf.json');
 var dir         = requireDir('./tasks/');
+
 
 // Define base folders
 var paths = {
@@ -38,13 +40,41 @@ var hyphenateSlug = function(slug) {
 }
 
 // Specifying the sass file and minified CSS file
-var sass  = require('gulp-sass');
 var files = {
-    sass: './src/sass/style.scss',
-    css: 'style.min.css'
+    input: './src/sass/style.scss',
+    output: ' style.min.css'
 }
 
+// Requiring all of the external gulp-tasks
+requireDir('./tasks', {recurse: true });
+
 // Generate new page
+gulp.task('new-page', ['new-page'], function(){
+    console.log('New page');
+});
 
 // Generate new post
+gulp.task('new-post', ['new-post'], function(){
+    console.log('New post');
+});
 
+
+// Sass gulp task
+gulp.task('sass-build', function () {
+    return gulp.src(files.input)
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(rename(files.output))
+        .pipe(gulp.dest(paths.distCss));
+});
+
+gulp.task('clean', function() { rmrf.sync(paths.dist); });
+
+gulp.task('build', ['clean', 'site-build', 'sass-build'], function() {
+   console.log(green('Task success: All pages built successfully.'));
+});
+
+gulp.task('watch:sass', function() { gulp.watch(paths.sass, ['sass-build']); });
+
+
+// Default task
+gulp.task('default', ['build', 'watch:sass'], function() { console.log('Default tasks'); });

@@ -219,11 +219,13 @@ gulp.task('site-build', function() {
                 tag: tag
             };
             
-            createPage({
-                layout: 'tag',
-                path: paths.dist + '/tag/' + tag.name + '/',
-                pageData: pageData
-            });
+            createPage(
+                {
+                    layout: 'tag',
+                    path: paths.dist + '/tag/' + tag.name + '/',
+                    pageData: pageData
+                }
+            );
         });
         
     }

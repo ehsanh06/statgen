@@ -1,3 +1,10 @@
+// Include Gulp and Plugins
+var _       = require('underscore');
+var argv    = require('yargs').argv;
+var fs      = require('fs');
+var gulp    = require('gulp');
+var mkdirp  = require('mkdirp');
+
 // Gulp task for generating a new post
 gulp.task('new-post', function() {
 

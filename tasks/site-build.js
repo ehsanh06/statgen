@@ -1,3 +1,11 @@
+// Include Gulp and Plugins
+var _       = require('underscore');
+var argv    = require('yargs').argv;
+var fs      = require('fs');
+var gulp    = require('gulp');
+var mkdirp  = require('mkdirp');
+
+
 // Task which takes care of the actual site build itself
 gulp.task('site-build', function() {
 
@@ -145,7 +153,6 @@ gulp.task('site-build', function() {
         siteData.navigation = _.sortBy(siteData.navigation, 'order');
     }
     
-
     function createAllPages() {
 
         // Looping through siteData.pages with callback
@@ -173,20 +180,22 @@ gulp.task('site-build', function() {
                 pageData.pageTitle = setPageTitle(page.navigationTitle);
             }
             
-            createPage({
-                layout: page.layout,
-                path: path,
-                pageData: pageData
-            });
+            createPage(
+                {
+                    layout: page.layout,
+                    pageData: pageData,
+                    path: path
+                }
+            );
         });
 
         _.each(siteData.posts, function(post) {
             var pageData = {
-                post: post,
+                config: config,
                 navigation: siteData.navigation,
                 pageTitle: setPageTitle(post.title),
-                recentPosts: siteData.recentPosts,
-                config: config
+                post: post,
+                recentPosts: siteData.recentPosts
             };
             
             // Resetting navigation active state
@@ -203,11 +212,11 @@ gulp.task('site-build', function() {
 
         _.each(siteData.tags, function(tag) {
             var pageData = {
-                tag: tag,
+                config: config,
                 navigation: siteData.navigation,
                 pageTitle: setPageTitle('Tag: ' + tag.name),
                 recentPosts: siteData.recentPosts,
-                config: config
+                tag: tag
             };
             
             createPage({
@@ -220,9 +229,9 @@ gulp.task('site-build', function() {
     }
     
     function createPage(data) {
+        var html     = template(data.pageData);
         var layout   = fs.readFileSync(paths.layouts + data.layout + '.html', 'utf8');
         var template = handlebars.compile(layout)
-        var html     = template(data.pageData);
             
         // Create a directory relative to data.path    
         mkdirp(data.path, function(err) {
@@ -248,7 +257,7 @@ gulp.task('site-build', function() {
     }
 
     // Function to test code block for any errors
-    function directoryExists(path) {
+    function dirExists(path) {
         try {
             fs.statSync(path);
             return true;

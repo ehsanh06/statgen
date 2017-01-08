@@ -1,3 +1,11 @@
+// Include Gulp and Plugins
+var _       = require('underscore');
+var argv    = require('yargs').argv;
+var fs      = require('fs');
+var gulp    = require('gulp');
+var marked  = require('marked');
+var mkdirp  = require('mkdirp');
+
 // Gulp Task for generating a new page
 gulp.task('new-page', function() {
 

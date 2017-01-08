@@ -14,7 +14,6 @@ var rename      = require('gulp-rename');
 var requireDir  = require('require-dir');
 var rmrf        = require('rimraf');
 var sass        = require('gulp-sass');
-// var s3       = require('gulp-s3');               Optional
 
 var conf        = require('./conf.json');
 var dir         = requireDir('./tasks/');
@@ -26,7 +25,7 @@ var paths = {
     posts: './views/posts/',
     drafts: './views/drafts/',
     layouts: './views/',
-    // includes: './includes/',                     Come back to this
+    includes: './public/src/js/**/*.hbs/',
     sass: './public/src/sass/**/*.scss',
     dist: './dist/',
     distCss: './dist/css/'

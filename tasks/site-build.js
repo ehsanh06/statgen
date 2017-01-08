@@ -6,6 +6,18 @@ var gulp    = require('gulp');
 var mkdirp  = require('mkdirp');
 
 var statgen = require('./statgen');
+// Define base folders
+
+var paths = {
+    pages: './views/pages/',
+    posts: './views/posts/',
+    drafts: './views/drafts/',
+    layouts: './views/',
+    // includes: './includes/',                     Come back to this
+    sass: './public/src/sass/**/*.scss',
+    dist: './dist/',
+    distCss: './dist/css/'
+}
 
 // Task which takes care of the actual site build itself
 gulp.task('site-build', function() {
@@ -99,7 +111,7 @@ gulp.task('site-build', function() {
         siteData.posts = _.sortBy(siteData.posts, 'date').reverse();
         
         // Get the very latest articles whilst abiding by the posts limit 
-        siteData.recentPosts = siteData.posts.slice(0, config.recentPostsLimit);
+        siteData.recentPosts = siteData.posts.slice(0, conf.recentPostsLimit);
         
         // Create tags
         var postsByTag = _.groupBy(siteData.tags, 'tag');

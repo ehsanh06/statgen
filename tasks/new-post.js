@@ -5,6 +5,18 @@ var fs      = require('fs');
 var gulp    = require('gulp');
 var mkdirp  = require('mkdirp');
 
+// Define base folders
+var paths = {
+    pages: './views/pages/',
+    posts: './views/posts/',
+    drafts: './views/drafts/',
+    layouts: './views/',
+    // includes: './includes/',                     Come back to this
+    sass: './public/src/sass/**/*.scss',
+    dist: './dist/',
+    distCss: './dist/css/'
+}
+
 // Gulp task for generating a new post
 gulp.task('new-post', function() {
 

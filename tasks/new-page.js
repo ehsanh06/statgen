@@ -6,6 +6,19 @@ var gulp    = require('gulp');
 var marked  = require('marked');
 var mkdirp  = require('mkdirp');
 
+// Define base folders
+var paths = {
+    pages: './views/pages/',
+    posts: './views/posts/',
+    drafts: './views/drafts/',
+    layouts: './views/',
+    // includes: './includes/',                     Come back to this
+    sass: './public/src/sass/**/*.scss',
+    dist: './dist/',
+    distCss: './dist/css/'
+}
+
+
 // Gulp Task for generating a new page
 gulp.task('new-page', function() {
 

@@ -1,7 +1,7 @@
 // Task which takes care of the actual site build itself
 gulp.task('site-build', function() {
 
-    // calling build method from statgen - this logs Statgen: Build1
+    // Calling build method from statgen
     statgen.build();
 
     // siteData will hold the meta information for the site
@@ -14,29 +14,31 @@ gulp.task('site-build', function() {
     };
     
     // Local functions
-    readMarkdownFiles();
-    createAuxiliaryData();
+    readMD();
+    createAuxData();
     createAllPages();
     
-    function readMarkdownFiles() {
+    function readMD() {
         
         // Validating if the directory does exist
-        if(directoryExists(paths.posts)) {
+        if(dirExists(paths.posts)) {
 
             // FileSystem will read the dir for posts and loop through each file
             fs.readdirSync(paths.posts).forEach(function(file) {
 
                 // Return, if after the . split is not equal to the MD file extension 
-                if(file.split('.')[1] != config.markdownFileExtention) return;
+                if (file.split('.')[1] != 'md') {
+                    return;
+                }
                 
                 // Add meta-data to content via fm for the the posts method and it's corresponding
                 // file using the UTF-8 format
                 var data = fm(fs.readFileSync(paths.posts + file, 'utf8'));
-                var post = data.attributes;
+                var post = data.attr;
                 
                 // Date formatting
                 post.year      = moment(post.date).format('YYYY');
-                post.niceDate  = moment(post.date).format('Do MMMM YYYY');
+                post.niceDate  = moment(post.date).format('MMMM YYYY');
                 post.shortDate = moment(post.date).format('MMM DD');
 
                 // post.content is marked to the DOM Body Object
@@ -44,10 +46,12 @@ gulp.task('site-build', function() {
                 
                 // Pushing tags to the siteData.tags array
                 _.each(post.tags, function(tag){
-                    siteData.tags.push({
-                        tag: tag,
-                        post: post
-                    });
+                    siteData.tags.push(
+                        {
+                            tag: tag,
+                            post: post
+                        }
+                    );
                 });
 
                 // Pushing posts to the siteData.posts array
@@ -56,18 +60,20 @@ gulp.task('site-build', function() {
         }
         
         // Validating if the directory does exist
-        if(directoryExists(paths.pages)) {
+        else if (dirExists(paths.pages)) {
 
             // FileSystem will read the dir for pages and loop through each file
             fs.readdirSync(paths.pages).forEach(function(file) {
 
                 // Return, if after the . split is not equal to the MD file extension 
-                if(file.split('.')[1] != config.markdownFileExtention) return;
+                if (file.split('.')[1] != 'md') { 
+                    return 
+                };
                 
                 // Add meta-data to content via fm for the the pages method and it's corresponding
                 // file using the UTF-8 format
                 var data = fm(fs.readFileSync(paths.pages + file, 'utf8'));
-                var page = data.attributes;
+                var page = data.attr;
                 
                 // page.content is marked to the DOM Body Object
                 page.content = marked(data.body);
@@ -78,32 +84,42 @@ gulp.task('site-build', function() {
         }
     }
     
-    function createAuxiliaryData() {
+    function createAuxData() {
 
         // Sort articles in decending order
         siteData.posts = _.sortBy(siteData.posts, 'date').reverse();
         
-        // Get latest articles and store this to siteData.recentPosts 
+        // Get the very latest articles whilst abiding by the posts limit 
         siteData.recentPosts = siteData.posts.slice(0, config.recentPostsLimit);
         
         // Create tags
         var postsByTag = _.groupBy(siteData.tags, 'tag');
         siteData.tags = [];
+
+        // Produces a new array of values by mapping each value in list through a transformation function
         _.mapObject(postsByTag, function(val, key) {
-            siteData.tags.push({
-                name: key,
-                posts: val
-            });
+            siteData.tags.push(
+                {
+                    name: key,
+                    posts: val
+                }
+            );
         });
         
         //  Create archive by year
         var postsByYear = _.groupBy(siteData.posts, 'year');
+        
+        // Produces a new array of values by mapping each value in list through a transformation function
         _.mapObject(postsByYear, function(val, key) {
-            siteData.archive.push({
-                year: key,
-                posts: val
-            });
+            siteData.archive.push(
+                {
+                    year: key,
+                    posts: val
+                }
+            );
         });
+
+        // We'll now reverse the siteData.archive array
         siteData.archive.reverse();
         
         //  Create navigation
@@ -113,13 +129,15 @@ gulp.task('site-build', function() {
             if(page.navigation) {
 
                 // Push the following Object into siteData navigation Object array
-                siteData.navigation.push({
-                    slug: page.slug,
-                    title: page.navigationTitle,
-                    url: (page.slug === 'home') ? '/' : '/' + page.slug + '/',
-                    active: false,
-                    order: page.order
-                });
+                siteData.navigation.push(
+                    {
+                        slug: page.slug,
+                        title: page.navigationTitle,
+                        url: (page.slug === 'home') ? '/' : '/' + page.slug + '/',
+                        active: false,
+                        order: page.order
+                    }
+                );
             }
         });
 

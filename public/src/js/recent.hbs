@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-2">
+        <h2>Recent articles</h2>
+        <ul class="list-unstyled">
+            {{#recentPosts}}
+                <li><a href="/{{ year }}/{{ slug }}/">{{ title }}</a> &mdash; {{ shortDate }}</li>
+            {{ else }}
+                <li>No recent articles.</li>
+            {{/recentPosts}}
+        </ul>
+    </div>
+    <div class="col-md-2">
+        <h2>Follow me</h2>
+        <p>
+            You can find me on <a href="https://twitter.com/{{ config.usernames.twitter }}">Twitter</a>, 
+            <a href="https://uk.linkedin.com/in/{{ config.usernames.linkedin }}">LinkedIn</a> and 
+            <a href="https://github.com/{{ config.usernames.github }}">GitHub</a>.
+        </p>
+    </div>
+</div>

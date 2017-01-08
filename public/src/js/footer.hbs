@@ -1,0 +1,16 @@
+    <footer class="container">
+        <div class="col-md-2">
+            <span>&copy; Someone's name</span>
+        <div>
+        <div class="col-md-2">
+            <ul class="nav nav-tabs">
+                {{#navigation}}
+                    <li>
+                        <a {{#if active}}  class="{{ ../../../config.currentMenuClass }}" {{/if}} href="{{ url }}">
+                            {{ title }}
+                        </a>
+                    </li>
+                {{/navigation}}
+            </ul>
+        <div>
+    </footer>

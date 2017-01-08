@@ -30,6 +30,7 @@
     "yargs": "^4.7.1"
   },
   "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",

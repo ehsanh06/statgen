@@ -1,4 +1,3 @@
 .DS_Store
 node_modules/
-aws.json
 .vscode/

@@ -1,23 +1,23 @@
 // Include Gulp and Plugins
 var _       = require('underscore');
-var argv    = require('yargs').argv;
-var colors  = require('colors');
+
 var fs      = require('fs');
 var fm      = require('front-matter');
 var gulp    = require('gulp');
+var marked      = require('marked');
 var mkdirp  = require('mkdirp');
 var moment  = require('moment');
 
 var conf    = require('../conf.json');
 var statgen = require('./statgen');
-// Define base folders
 
+// Define base folders
 var paths = {
     pages: './views/pages/',
     posts: './views/posts/',
     drafts: './views/drafts/',
     layouts: './views/',
-    // includes: './includes/',                     Come back to this
+    includes: './public/src/js/',
     sass: './public/src/sass/**/*.scss',
     dist: './dist/',
     distCss: './dist/css/'
@@ -52,7 +52,7 @@ gulp.task('site-build', function() {
             fs.readdirSync(paths.posts).forEach(function(file) {
 
                 // Return, if after the . split is not equal to the MD file extension 
-                if (file.split('.')[1] != 'md') {
+                if (file.split('.')[1] !== 'md') {
                     return;
                 }
                 
@@ -91,7 +91,7 @@ gulp.task('site-build', function() {
             fs.readdirSync(paths.pages).forEach(function(file) {
 
                 // Return, if after the . split is not equal to the MD file extension 
-                if (file.split('.')[1] != 'md') { 
+                if (file.split('.')[1] !== 'md') { 
                     return 
                 };
                 
@@ -184,7 +184,7 @@ gulp.task('site-build', function() {
             };
             
             _.each(siteData.navigation, function(item) {
-                item.active = (item.slug == page.slug) ? true : false; 
+                item.active = (item.slug === page.slug) ? true : false; 
             });
             
             if (page.slug === 'home') {

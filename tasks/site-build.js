@@ -97,10 +97,11 @@ gulp.task('site-build', function() {
                 // Add meta-data to content via fm for the the pages method and it's corresponding
                 // file using the UTF-8 format
                 var data = fm(fs.readFileSync(paths.pages + file, 'utf8'));
-                var page = data.attr;
+                var page = [];
+                page[0]  = data.attr;
                 
                 // page.content is marked to the DOM Body Object
-                page.content = marked(data.body);
+                page[1] = page.content = marked(data.body);
 
                 // We'll then add all this to the siteData.pages empty array
                 siteData.pages.push(page);

@@ -12,7 +12,7 @@ var paths = {
     posts: './views/posts/',
     drafts: './views/drafts/',
     layouts: './views/',
-    // includes: './includes/',                     Come back to this
+    includes: './public/src/js/',
     sass: './public/src/sass/**/*.scss',
     dist: './dist/',
     distCss: './dist/css/'

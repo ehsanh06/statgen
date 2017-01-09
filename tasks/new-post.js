@@ -2,7 +2,6 @@
 var _       = require('underscore');
 var argv    = require('yargs').argv;
 var colors  = require('colors');
-var fm      = require('front-matter');
 var fs      = require('fs');
 var gulp    = require('gulp');
 var mkdirp  = require('mkdirp');
@@ -18,14 +17,14 @@ var paths = {
     sass: './public/src/sass/**/*.scss',
     dist: './dist/',
     distCss: './dist/css/'
-}
+};
 
 // Global variable function which takes care of slug
 var hyphenateSlug = function(slug) {
 
     // Convert slug to lowercase, trim whitespace, replace any /'s with '-'s
     return slug.toLowerCase().trim().replace(/[^\w\s]/g, '').replace(/\s+/g, '-');
-}
+};
 
 
 // Gulp task for generating a new post
@@ -64,19 +63,19 @@ gulp.task('new-post', function() {
             'tags: []\r\n' +                                    // Tags, if applicable CR/NL regex
             'title: "' + title + '"\r\n' +                      // Title of the page CR/NL regex
             '---\r\n' +                                         // --- CR/NL regex
-            ' <Place Content Here> \r\n'                        // Place content here, CR/NL regex
+            ' <Place Content Here> \r\n';                       // Place content here, CR/NL regex
 
         // Creating a directory corresponding to the paths.page string (filepath)             
         mkdirp(paths.pages, function(err) {
 
             // Error handler
-            if(err) return console.log(err);
+            if (err) { return console.log(err); }
 
             // FileSystem will now write the file according to filename/meta
             fs.writeFile(filename, meta, function(err) {
                 
                 // Error handler
-                if(err) return console.log(err);
+                if(err) { return console.log(err); }
                 
                 // Log to the console the success of the page generated
                 return 'New page file has successfully been created: ' + filename;

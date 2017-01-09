@@ -1,9 +1,12 @@
 // Include Gulp and Plugins
 var _       = require('underscore');
 var argv    = require('yargs').argv;
+var colors  = require('colors');
+var fm      = require('front-matter');
 var fs      = require('fs');
 var gulp    = require('gulp');
 var mkdirp  = require('mkdirp');
+var moment  = require('moment');
 
 // Define base folders
 var paths = {
@@ -16,6 +19,14 @@ var paths = {
     dist: './dist/',
     distCss: './dist/css/'
 }
+
+// Global variable function which takes care of slug
+var hyphenateSlug = function(slug) {
+
+    // Convert slug to lowercase, trim whitespace, replace any /'s with '-'s
+    return slug.toLowerCase().trim().replace(/[^\w\s]/g, '').replace(/\s+/g, '-');
+}
+
 
 // Gulp task for generating a new post
 gulp.task('new-post', function() {
@@ -73,3 +84,4 @@ gulp.task('new-post', function() {
         });
     });
 });
+

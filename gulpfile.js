@@ -55,15 +55,15 @@ var files = {
 // Requiring all of the external gulp-tasks
 requireDir('./tasks', {recurse: true });
 
-// Generate new page
-gulp.task('new-page', ['new-page'], function(){
-    console.log('New page');
-});
+// // Generate new page
+// gulp.task('new-page', ['new-page'], function(){
+//     console.log('New page');
+// });
 
-// Generate new post
-gulp.task('new-post', ['new-post'], function(){
-    console.log('New post');
-});
+// // Generate new post
+// gulp.task('new-post', ['new-post'], function(){
+//     console.log('New post');
+// });
 
 
 // Sass gulp task

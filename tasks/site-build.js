@@ -4,7 +4,7 @@ var _       = require('underscore');
 var fs      = require('fs');
 var fm      = require('front-matter');
 var gulp    = require('gulp');
-var marked      = require('marked');
+var marked  = require('marked');
 var mkdirp  = require('mkdirp');
 var moment  = require('moment');
 
@@ -92,8 +92,8 @@ gulp.task('site-build', function() {
 
                 // Return, if after the . split is not equal to the MD file extension 
                 if (file.split('.')[1] !== 'md') { 
-                    return 
-                };
+                    return;
+                }
                 
                 // Add meta-data to content via fm for the the pages method and it's corresponding
                 // file using the UTF-8 format
@@ -256,24 +256,20 @@ gulp.task('site-build', function() {
         mkdirp(data.path, function(err) {
             
             // Error handler
-            if(err) return console.log(err);
+            if(err) { return console.log(err); }
 
             // FileSystem will write to the path of index.html in html format
             fs.writeFile(data.path + 'index.html', html, function(err) {
 
                 // Error handler
-                if(err) return console.log(err);
+                if(err) { return console.log(err); }
             });
         });
     }
     
-    function setPageTitle(title) {
-        return title + ' - ' + conf.author;
-    }
+    function setPageTitle(title) { return title + ' - ' + conf.author; }
     
-    function capitalize(str) {
-        return str[0].toUpperCase() + str.slice(1);
-    }
+    function capitalize(str) { return str[0].toUpperCase() + str.slice(1); }
 
     // Function to test code block for any errors
     function dirExists(path) {

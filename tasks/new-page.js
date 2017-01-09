@@ -28,8 +28,6 @@ var hyphenateSlug = function(slug) {
     return slug.toLowerCase().trim().replace(/[^\w\s]/g, '').replace(/\s+/g, '-');
 }
 
-
-
 // Gulp Task for generating a new page
 gulp.task('new-page', function() {
 

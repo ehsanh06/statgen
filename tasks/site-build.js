@@ -5,6 +5,7 @@ var fs      = require('fs');
 var gulp    = require('gulp');
 var mkdirp  = require('mkdirp');
 
+var conf    = require('../conf.json');
 var statgen = require('./statgen');
 // Define base folders
 
@@ -172,11 +173,11 @@ gulp.task('site-build', function() {
         _.each(siteData.pages, function(page) {
 
             var pageData = {
-                page: page, 
-                navigation: siteData.navigation,
-                recentPosts: siteData.recentPosts,
                 archive: siteData.archive,
-                config: config
+                conf: conf,
+                navigation: siteData.navigation,
+                page: page, 
+                recentPosts: siteData.recentPosts
             };
             
             _.each(siteData.navigation, function(item) {
@@ -185,7 +186,7 @@ gulp.task('site-build', function() {
             
             if (page.slug === 'home') {
                 var path = paths.dist;
-                pageData.pageTitle = setPageTitle(config.siteTitle);
+                pageData.pageTitle = setPageTitle(conf.siteTitle);
                 pageData.showRecent = true;
                 pageData.isHome = true;
             } else {
@@ -204,7 +205,7 @@ gulp.task('site-build', function() {
 
         _.each(siteData.posts, function(post) {
             var pageData = {
-                config: config,
+                conf: conf,
                 navigation: siteData.navigation,
                 pageTitle: setPageTitle(post.title),
                 post: post,
@@ -225,7 +226,7 @@ gulp.task('site-build', function() {
 
         _.each(siteData.tags, function(tag) {
             var pageData = {
-                config: config,
+                conf: conf,
                 navigation: siteData.navigation,
                 pageTitle: setPageTitle('Tag: ' + tag.name),
                 recentPosts: siteData.recentPosts,
@@ -264,7 +265,7 @@ gulp.task('site-build', function() {
     }
     
     function setPageTitle(title) {
-        return title + ' - ' + config.author;
+        return title + ' - ' + conf.author;
     }
     
     function capitalize(str) {

@@ -25,11 +25,19 @@ var paths = {
     posts: './views/posts/',
     drafts: './views/drafts/',
     layouts: './views/',
-    includes: './public/src/js/**/*.hbs/',
+    includes: './public/src/js/',
     sass: './public/src/sass/**/*.scss',
     dist: './dist/',
     distCss: './dist/css/'
 }
+
+// Handlebars registerPartial method takes name of partial as first arg
+// and also takes a template source or compiled template as second arg
+// in this case it'll be the source files for each corresponding partial
+handlebars.registerPartial('nav', fs.readFileSync(paths.includes + 'nav.hbs', 'utf8'));
+handlebars.registerPartial('head', fs.readFileSync(paths.includes + 'head.hbs', 'utf8'));
+handlebars.registerPartial('footer', fs.readFileSync(paths.includes + 'footer.hbs', 'utf8'));
+handlebars.registerPartial('recent', fs.readFileSync(paths.includes + 'recent.hbs', 'utf8'));
 
 // Global variable function which takes care of slug
 var hyphenateSlug = function(slug) {
@@ -69,7 +77,7 @@ gulp.task('sass-build', function () {
 gulp.task('clean', function() { rmrf.sync(paths.dist); });
 
 gulp.task('build', ['clean', 'site-build', 'sass-build'], function() {
-   console.log(green('Task success: All pages built successfully.'));
+   console.log('Task success: All pages built successfully.');
 });
 
 gulp.task('watch:sass', function() { gulp.watch(paths.sass, ['sass-build']); });

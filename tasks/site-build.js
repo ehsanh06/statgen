@@ -1,6 +1,5 @@
 // Include Gulp and Plugins
 var _       = require('underscore');
-
 var fs      = require('fs');
 var fm      = require('front-matter');
 var gulp    = require('gulp');

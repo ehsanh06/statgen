@@ -1,0 +1,15 @@
+{
+    "author": "John Doe",
+    "email": "john.doe@someonesdomain.com",
+    "siteTitle": "Hello world!",
+    "description": "Some description...",
+    "usernames": 
+    {
+        "instagram": "johndoe123",
+        "github": "johndoe123",
+        "linkedin": "johndoe123",
+        "twitter": "johndoe123"
+    },
+    "recentPostLimit": 6,
+    "currentMenuClass": "menu__item__current"
+}

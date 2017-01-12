@@ -1,24 +1,18 @@
-// Include Gulp, plugins and local files
-var _ = require('underscore');
-var argv = require('yargs').argv;
-var fm = require('front-matter');
-var fs = require('fs');
+// Include Gulp and modular task file
 var gulp = require('gulp');
-var handlebars = require('handlebars');
-var marked = require('marked');
-var mkdirp = require('mkdirp');
-var moment = require('moment');
-var rename = require('gulp-rename');
-var rmrf = require('rimraf');
-var sass = require('gulp-sass');
-
-var config = require('./config.json');
-var global = require('./lib/global');
+var tasks = require('./lib/tasks/index');
 
 // Gulp tasks
-
-gulp.task('post', require('./tasks/post/post.js')(gulp));
-gulp.task('page', require('./tasks/page/page.js')(gulp));
-gulp.task('build', require('./tasks/build/build.js')(gulp));
-
+gulp.task('post', function() {
+    console.log('Console Message: Building Post'),
+    tasks.post;
+});
+gulp.task('page', function() {
+    console.log('Console Message: Building Page'),
+    tasks.page;
+});
+gulp.task('build', function() {
+    console.log('Console Message: Building in progress'),
+    tasks.build;
+});
 // Default task goes here

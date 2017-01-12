@@ -5,5 +5,7 @@ module.exports = function(gulp) {
     require('./post/post')(gulp);
     // page.js
     require('./page/page')(gulp);
+    // build.js
+    require('./build/build')(gulp);
 
 };

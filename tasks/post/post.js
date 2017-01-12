@@ -9,7 +9,7 @@ var moment = require('moment');
 
 var global = require('../../lib/global');
 
-module.exports = function (gulp) {
+module.exports = function () {
 
     // Gulp Task for generating a new post
     gulp.task('post', function () {

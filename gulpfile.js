@@ -15,6 +15,10 @@ var sass = require('gulp-sass');
 var config = require('./config.json');
 var global = require('./lib/global');
 
+// Gulp tasks
+
 gulp.task('post', require('./tasks/post/post.js')(gulp));
 gulp.task('page', require('./tasks/page/page.js')(gulp));
 gulp.task('build', require('./tasks/build/build.js')(gulp));
+
+// Default task goes here

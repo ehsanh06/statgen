@@ -28,9 +28,8 @@ module.exports = function () {
                 // FileSystem will read the dir for posts and loop through each file
                 fs.readdirSync(global.srcDir.posts).forEach(function (file) {
 
-                    // Return, if after the . split is not equal to the MD file extension 
-                    if (file.split('.')[1] != 'md') { 
-                        return; 
+                    if (file.split('.')[1] !== 'md') { 
+                        return this; 
                     }
 
                     // Add meta-data to content via fm for the the posts method and it's corresponding
@@ -40,8 +39,8 @@ module.exports = function () {
 
                     // Date formatting
                     post.year = moment(post.date).format('YYYY');
-                    post.niceDate = moment(post.date).format('Do MMMM YYYY');
-                    post.shortDate = moment(post.date).format('MMM DD');
+                    post.Date = moment(post.date).format('MMM YYYY');
+                    post.shortDate = moment(post.date).format('DD MM');
 
                     // post.content is marked to the DOM Body Object
                     post.content = marked(data.body);

@@ -30,7 +30,7 @@ module.exports = function () {
         var filename = path + moment().format('DD-MM-YY') + '-' + slug + '.md';
 
         // fs.access determines if a file exists, regardless of rwx permissions
-        fs.access(filename, fs.F_OK, function (err) {
+        fs.access(filename, fs.constants.F_OK, function (err) {
 
             // Since this exists, then we can log to the console that this file(in question) exists
             if (err) {
@@ -38,6 +38,7 @@ module.exports = function () {
             }
 
             var meta =
+                '---\r\n' +                                         // --- CR/NL regex
                 'date: ' + moment().format() + '\r\n' +             // Date format, CR/NL regex
                 'layout: post\r\n' +                                // Layout: page CR/NLregex
                 'slug: ' + slug + '\r\n' +                          // slug variable, CR/NL regex
@@ -46,7 +47,7 @@ module.exports = function () {
                 '---\r\n' +                                         // --- CR/NL regex
                 ' <Insert your content here> \r\n ';                // Content goes here CR/NL regex
 
-            // We're creating a directory corresponding to the paths.page string (filepath).             
+            // We're creating a directory corresponding to the pages directory string (filepath).             
             mkdirp(global.srcDir.pages, function (err) {
 
                 // If error, return error.
@@ -55,7 +56,7 @@ module.exports = function () {
                 }
 
                 // FileSystem will now write the file according to filename/meta
-                fs.writeFile(filename, meta, function (err) {
+                fs.writeFileSync(filename, meta, function (err) {
 
                     // Error handler
                     if (err) {

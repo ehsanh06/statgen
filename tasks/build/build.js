@@ -65,8 +65,8 @@ module.exports = function () {
                 fs.readdirSync(global.srcDir.pages).forEach(function (file) {
 
                     // Return, if after the . split is not equal to the MD file extension 
-                    if (file.split('.')[1] != 'md') { 
-                        return;
+                    if (file.split('.')[1] !== 'md') { 
+                        return this;
                     }
                     // Add meta-data to content via fm for the the pages method and it's corresponding
                     // file using the UTF-8 format

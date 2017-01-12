@@ -15,6 +15,7 @@ module.exports = function () {
 
         // Checking if  the CLI output is --title or -t
         if (argv.title || argv.t) {
+
             var title = argv.title || argv.t;
             var path = (argv.d || argv.default) ? global.srcDir.drafts : global.srcDir.posts;
             var slug = global.hyphenateSlug(title);
@@ -26,9 +27,7 @@ module.exports = function () {
             fs.access(filename, fs.constants.F_OK, function (err) {
 
                 // Since this exists, then we can log to the console that this file(in question) exists
-                if (err) {
-                    return 'Task aborted: File ' + filename + ' already exists.';
-                }
+                if (err) { return 'Task aborted: File ' + filename + ' already exists.'; }
 
                 var meta =
                     '---\r\n' +                                         // --- CR/NL regex
@@ -44,17 +43,13 @@ module.exports = function () {
                 mkdirp(path, function (err) {
 
                     // If error, return error.
-                    if (err) {
-                        return err;
-                    }
+                    if (err) { return err; }
 
                     // FileSystem will now write the file according to filename/meta
                     fs.writeFileSync(filename, meta, function (err) {
 
                         // Error handler
-                        if (err) {
-                            return err;
-                        }
+                        if (err) { return err; }
 
                         // Log to the console the success of the page generated
                         console.log('Task success - Your new post was successfully created: ', filename);

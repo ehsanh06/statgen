@@ -11,10 +11,9 @@ var global = require('../../lib/global');
 
 module.exports = function () {
 
-    // Gulp Task for generating a new post
     gulp.task('post', function () {
 
-        // If the output is either -t or --title  then we store this to title
+        // Checking if  the CLI output is --title or -t
         if (argv.title || argv.t) {
             var title = argv.title || argv.t;
         } else {
@@ -22,7 +21,7 @@ module.exports = function () {
             // Otherwise we log the error out to console if user didn't input -t or --title
             return 'Error: You must enter a title for your page. Use --title "Page title" or -t "Page title"';
         }
-
+        
         var path = (argv.d || argv.default) ? global.srcDir.drafts : global.srcDir.posts;
         var slug = global.hyphenateSlug(title);
 

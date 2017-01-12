@@ -23,7 +23,7 @@ module.exports = function () {
         function readMarkdownFiles() {
 
             // Validating if the directory does exist
-            if (global.directoryExists(global.srcDir.posts)) {
+            if (global.dirExists(global.srcDir.posts)) {
 
                 // FileSystem will read the dir for posts and loop through each file
                 fs.readdirSync(global.srcDir.posts).forEach(function (file) {
@@ -151,12 +151,12 @@ module.exports = function () {
 
                 if (page.slug === 'home') {
                     var path = global.srcDir.dist;
-                    pageData.pageTitle = setPageTitle(config.siteTitle);
+                    pageData.pageTitle = global.setPageTitle(config.siteTitle);
                     pageData.showRecent = true;
                     pageData.isHome = true;
                 } else {
                     var path = global.srcDir.dist + page.slug + '/';
-                    pageData.pageTitle = setPageTitle(page.navigationTitle);
+                    pageData.pageTitle = global.setPageTitle(page.navigationTitle);
                 }
 
                 global.createPage({
@@ -170,7 +170,7 @@ module.exports = function () {
                 var pageData = {
                     post: post,
                     navigation: global.siteData.navigation,
-                    pageTitle: setPageTitle(post.title),
+                    pageTitle: global.setPageTitle(post.title),
                     recentPosts: global.siteData.recentPosts,
                     config: config
                 };
@@ -191,7 +191,7 @@ module.exports = function () {
                 var pageData = {
                     tag: tag,
                     navigation: global.siteData.navigation,
-                    pageTitle: setPageTitle('Tag: ' + tag.name),
+                    pageTitle: global.setPageTitle('Tag: ' + tag.name),
                     recentPosts: global.siteData.recentPosts,
                     config: config
                 };

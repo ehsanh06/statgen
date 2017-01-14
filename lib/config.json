@@ -1,0 +1,24 @@
+{
+    "author": "John Doe",
+    "email": "john.doe@someonesdomain.com",
+    "siteTitle": "Hello world!",
+    "description": "Some description...",
+    "usernames": {
+        "instagram": "johndoe123",
+        "github": "johndoe123",
+        "linkedin": "johndoe123",
+        "twitter": "johndoe123"
+    },
+    "recentPostLimit": 6,
+    "currentMenuClass": "menu__item__current",
+    "path": {
+        "pages": "../views/pages/",
+        "posts": "../views/posts/",
+        "drafts": "../views/drafts/",
+        "layouts": "../views/layouts/",
+        "includes": "../public/src/js/",
+        "sass": "../public/src/sass/*.scss",
+        "dist": "../dist/",
+        "distCss": "../dist/css/"
+    }
+}

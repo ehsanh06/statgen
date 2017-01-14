@@ -3,6 +3,8 @@
 // Include Gulp and modular task file
 var gulp = require('gulp');
 var tasks = require('./lib/tasks/');
+var t = title || null, 
+    s = slug ||  null;
 
 // Gulp tasks
 gulp.task('post', function() {

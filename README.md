@@ -25,6 +25,7 @@ gulp page --title "testPage"
 gulp page -t "testPage" -s "test"
 
 gulp page --title "testPage" --slug "test"
+```
 
 > This generates an `md` file in the `pages` directory
 
@@ -37,10 +38,10 @@ You can generate new posts in your pages, using the following command:
 ```
 Usage:
 
-gulp post [ -t | --title [^1] ] <Your page title> [-s | --slug [^2] ] <Your URL Slug>
+gulp post [ -t | --title ] <Your page title> [-s | --slug ] <Your URL Slug>
 
-[^1] -t or --title is a mandatory argument to input
-[^2] -s or --slug is an optional argument to input
+> -t or --title is a mandatory argument to input
+> -s or --slug is an optional argument to input
 
 Examples:
 
@@ -51,7 +52,7 @@ gulp post --title "testPage"
 gulp post -t "testPage" -s "test"
 
 gulp post --title "testPage" --slug "test"
-
+```
 > This generates an `md` file in the `posts` directory
 
 Ensuring that you have created a new `markdown` post, you can edit the content and default metadata.

@@ -14,7 +14,7 @@ Usage:
 gulp page [ -t | --title ] <Your page title> [ -s | --slug ] <Your URL Slug>
 ```
 > -t or --title is a mandatory argument to input
-> -s or --slug is an optional argument to input
+>> -s or --slug is an optional argument to input
 
 ```
 Examples:
@@ -43,7 +43,7 @@ gulp post [ -t | --title ] <Your page title> [-s | --slug ] <Your URL Slug>
 ```
 
 > -t or --title is a mandatory argument to input
-> -s or --slug is an optional argument to input
+>> -s or --slug is an optional argument to input
 
 ```
 Examples:

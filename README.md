@@ -11,11 +11,12 @@ You can generate new pages using the following command:
 ```
 Usage:
 
-gulp page [ -t | --title [^1] ] <Your page title> [ -s | --slug [^2] ] <Your URL Slug>
+gulp page [ -t | --title ] <Your page title> [ -s | --slug ] <Your URL Slug>
+```
+> -t or --title is a mandatory argument to input
+> -s or --slug is an optional argument to input
 
-[^1] -t or --title is a mandatory argument to input
-[^2] -s or --slug is an optional argument to input
-
+```
 Examples:
 
 gulp page -t "testPage"
@@ -39,10 +40,12 @@ You can generate new posts in your pages, using the following command:
 Usage:
 
 gulp post [ -t | --title ] <Your page title> [-s | --slug ] <Your URL Slug>
+```
 
 > -t or --title is a mandatory argument to input
 > -s or --slug is an optional argument to input
 
+```
 Examples:
 
 gulp post -t "testPage"

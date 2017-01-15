@@ -4,7 +4,8 @@ var gulp = require('gulp');
 var tasks = require('./lib/tasks/');
 
 gulp.task('post', function() {
-    var title, slug = "Post title example";
+    var title = "Post title example";
+    var slug = "post-title-example";
 
     // With default parameters in ES2015, the check in the function body is no longer necessary
     // Slug is an optional parameter
@@ -12,7 +13,8 @@ gulp.task('post', function() {
 });
 
 gulp.task('page', function() {
-    var title, slug  = "Page title example";
+    var title = "Page title example";
+    var slug = "page-title-example"
     tasks.page(title);
 });
 

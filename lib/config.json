@@ -12,7 +12,7 @@
     "recentPostLimit": 6,
     "currentMenuClass": "menu__item__current",
     "path": {
-        "pages": "views/pages/",
+        "pages": "pages/",
         "posts": "posts/",
         "drafts": "views/drafts/",
         "layouts": "views/layouts/",

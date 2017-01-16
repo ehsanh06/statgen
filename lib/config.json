@@ -12,13 +12,13 @@
     "recentPostLimit": 6,
     "currentMenuClass": "menu__item__current",
     "path": {
-        "pages": "../views/pages/",
-        "posts": "../views/posts/",
-        "drafts": "../views/drafts/",
-        "layouts": "../views/layouts/",
-        "includes": "../public/src/js/",
-        "sass": "../public/src/sass/*.scss",
-        "dist": "../dist/",
-        "distCss": "../dist/css/"
+        "pages": "views/pages/",
+        "posts": "posts/",
+        "drafts": "views/drafts/",
+        "layouts": "views/layouts/",
+        "includes": "public/src/js/",
+        "sass": "public/src/sass/*.scss",
+        "dist": "dist/",
+        "distCss": "dist/css/"
     }
 }

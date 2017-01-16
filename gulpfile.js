@@ -15,7 +15,7 @@ gulp.task('post', function() {
 gulp.task('page', function() {
     var title = 'Page title example';
     var slug = 'page-title-example';
-    tasks.page(title);
+    tasks.page(title, slug);
 });
 
 gulp.task('build', function() {

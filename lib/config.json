@@ -1,13 +1,12 @@
 {
-    "author": "John Doe",
-    "email": "john.doe@someonesdomain.com",
+    "author": "Ehsan Hussain",
+    "email": "ehsanhussain991@gmail.com",
     "siteTitle": "Hello world!",
     "description": "Some description...",
     "usernames": {
-        "instagram": "johndoe123",
-        "github": "johndoe123",
-        "linkedin": "johndoe123",
-        "twitter": "johndoe123"
+        "github": "ehsanh06",
+        "linkedin": "ehsanh06",
+        "twitter": "ehsanh06"
     },
     "recentPostLimit": 6,
     "currentMenuClass": "menu__item__current",

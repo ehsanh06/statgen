@@ -15,7 +15,7 @@
         "posts": "posts/",
         "drafts": "views/drafts/",
         "layouts": "views/layouts/",
-        "includes": "public/src/js/",
+        "includes": "includes/",
         "sass": "public/src/sass/*.scss",
         "dist": "dist/",
         "distCss": "dist/css/"

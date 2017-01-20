@@ -6,18 +6,14 @@ var gulp = require('gulp');
 var tasks = require('./lib/');
 
 gulp.task('post', function () {
-    var argTitle = argv.title || argv.t;
-    var title = (argTitle) ? argTitle : undefined;
-
+    var title = argv.title || argv.t;
     tasks.post(title);
 });
 
 gulp.task('page', function () {
-    var argTitle = argv.title || argv.t;
-    var argSlug = argv.slug || argv.s;
-    var slug =  (argSlug) ? argSlug : undefined;
-    var title = (argTitle) ? argTitle : undefined;
-
+    var title = argv.title || argv.t;
+    var slug =  argv.slug || argv.s;
+    
     tasks.page(title, slug);
 });
 

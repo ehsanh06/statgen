@@ -21,6 +21,10 @@ gulp.task('build', function () {
     tasks.build();
 });
 
+gulp.task('new', function() {
+    tasks.project();
+});
+
 gulp.task('default', function () {
     console.log('default tasks');
 });

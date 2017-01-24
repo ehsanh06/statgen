@@ -1,0 +1,9 @@
+{
+    "paths": {
+        "pages": "_testPages",
+        "posts": "_testPosts/",
+        "layouts": "_testLayouts/",
+        "includes": "_testIncludes/",
+        "site": "_testSite/"
+    }
+}

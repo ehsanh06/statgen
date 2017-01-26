@@ -22,9 +22,9 @@ gulp.task('build', function () {
 });
 
 gulp.task('new', function() {
-    tasks.project();
+    tasks.new();
 });
 
 gulp.task('default', function () {
-    console.log('default tasks');
+    console.log('default task');
 });

@@ -1,5 +1,5 @@
 .DS_Store
-node_modules/
+node_modules
 spec.txt
-.vscode/
-_site/
+.vscode
+_site

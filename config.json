@@ -12,10 +12,10 @@
     "recentPostLimit": 5,
     "currentMenuClass": "menu__item__current",
     "paths": {
-        "pages": "_testPages",
-        "posts": "_testPosts/",
-        "layouts": "_testLayouts/",
-        "includes": "_testIncludes/",
-        "site": "_testSite/"
+        "pages": "_pages",
+        "posts": "_posts/",
+        "layouts": "_layouts/",
+        "includes": "_includes/",
+        "site": "_site/"
     }
 }

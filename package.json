@@ -1,21 +1,30 @@
 {
   "name": "statgen",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "A static website and blog generating CLI",
+  "keywords": [
+    "static",
+    "blog",
+    "generator",
+    "site",
+    "jekyll"
+  ],
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "contributors": [
+      "Ehsan Hussain",
+      "Shahid Altaf"
+  ],
+  "homepage": "https://github.com/ehsanh06/statgen#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ehsanh06/statgen.git"
   },
-  "author": "Ehsan Hussain",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ehsanh06/statgen/issues"
-  },
-  "homepage": "https://github.com/ehsanh06/statgen#readme",
   "dependencies": {
     "front-matter": "^2.1.0",
     "fs-extra": "^2.0.0",
@@ -28,11 +37,7 @@
     "yargs": "^4.7.1"
   },
   "devDependencies": {
-    "colors": "^1.1.2",
-    "bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
     "require-dir": "^0.3.1"
   }
 }

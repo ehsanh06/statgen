@@ -3,7 +3,7 @@
 var argv = require('yargs').argv;
 var gulp = require('gulp');
 
-var tasks = require('./lib/');
+var tasks = require('./index');
 
 gulp.task('post', function () {
     var title = argv.title || argv.t;

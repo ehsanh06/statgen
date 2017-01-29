@@ -1,0 +1,25 @@
+{
+    "author": "Blog Man",
+    "title": "Blog",
+    "description": "Blog generated using Statgen",
+    "links": [
+        {
+            "name": "GitHub", 
+            "url": "https://github.com/ehsanh06"
+        },
+        {
+            "name": "Twitter", 
+            "url": "http://twitter.com/ehsanh06"
+        }
+    ],
+    "archive": true,
+    "recentPostLimit": 5,
+    "currentMenuClass": "current",
+    "paths": {
+        "pages": "_pages/",
+        "posts": "_posts/",
+        "layouts": "_layouts/",
+        "includes": "_includes/",
+        "site": "_site/"
+    }
+}

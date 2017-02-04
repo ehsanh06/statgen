@@ -2,9 +2,9 @@
 node_modules
 spec.txt
 .vscode
-_site
-_includes
-_layouts
-_pages
-_posts
-_config.json
+/_site
+/_includes
+/_layouts
+/_pages
+/_posts
+/_config.json

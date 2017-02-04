@@ -10,26 +10,7 @@ var post = require('./lib/post');
 var page = require('./lib/page');
 var build = require('./lib/build');
 
-function pageFunc() {
-    console.log('hwhrwrhwrhwrhwrwrwrwrwe...');
-}
-
 program.version('0.0.1');
-
-    // .command('init')
-    // .description('creates config file in current directory')
-    // .action(function() {
-    //     init();
-    // })
-
-    // .command('new')
-    // .description('creates new statgen project')
-    // .action(function() {
-    //     newSite();
-    // })
-
-// program.option('-t, --title <title>', 'title for page')
-//     .option('-s, --slug [slug]', 'slug for page')
 
 program.command('page')
     .description('creates new page')
@@ -52,4 +33,10 @@ program.command('build')
         build();
     });
     
+program.command('new')
+    .description('creates new statgen project')
+    .action(function() {
+        newSite();
+    })
+
 program.parse(process.argv);

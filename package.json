@@ -6,19 +6,24 @@
     "blog",
     "generator",
     "site",
-    "jekyll"
+    "jekyll",
+    "markdown"
   ],
   "version": "0.0.1",
+  "license": "MIT",
   "engines": {
     "node": ">= 0.10.0"
   },
   "main": "index.js",
+  "bin": {
+    "statgen": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "contributors": [
-      "Ehsan Hussain",
-      "Shahid Altaf"
+    "Ehsan Hussain",
+    "Shahid Altaf"
   ],
   "homepage": "https://github.com/ehsanh06/statgen#readme",
   "repository": {
@@ -26,6 +31,7 @@
     "url": "git+https://github.com/ehsanh06/statgen.git"
   },
   "dependencies": {
+    "commander": "^2.9.0",
     "front-matter": "^2.1.0",
     "fs-extra": "^2.0.0",
     "handlebars": "^4.0.5",

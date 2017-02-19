@@ -1,8 +1,19 @@
 # Statgen 
 
-Stategen is a simple static website generator using `node`, `gulp`, `markdown` and `handlebars`. 
+Statgen is a in-built CLI that is designed to be a simple static website generator using, `node`, `markdown` and `handlebars`. 
 
 ## Usage
+
+### New Project
+
+You can create a new project usng the following command:
+
+```
+Usage:
+
+statgen new
+
+```
 
 ### Creating Pages
 
@@ -11,7 +22,7 @@ You can generate new pages using the following command:
 ```
 Usage:
 
-gulp page [ -t | --title ] <Your page title> [ -s | --slug ] <Your URL Slug>
+statgen page [ -t | --title ] <Your page title> [ -s | --slug ] <Your URL Slug>
 ```
 > -t or --title is a mandatory argument to input
 
@@ -20,13 +31,13 @@ gulp page [ -t | --title ] <Your page title> [ -s | --slug ] <Your URL Slug>
 ```
 Examples:
 
-gulp page -t "testPage"
+statgen page -t "testPage"
 
-gulp page --title "testPage"
+statgen page --title "testPage"
 
-gulp page -t "testPage" -s "test"
+statgen page -t "testPage" -s "test"
 
-gulp page --title "testPage" --slug "test"
+statgen page --title "testPage" --slug "test"
 ```
 
 > This generates an `md` file in the `pages` directory
@@ -40,7 +51,7 @@ You can generate new posts in your pages, using the following command:
 ```
 Usage:
 
-gulp post [ -t | --title ] <Your page title> [-s | --slug ] <Your URL Slug>
+statgen post [ -t | --title ] <Your page title> [-s | --slug ] <Your URL Slug>
 ```
 
 > -t or --title is a mandatory argument to input
@@ -50,13 +61,13 @@ gulp post [ -t | --title ] <Your page title> [-s | --slug ] <Your URL Slug>
 ```
 Examples:
 
-gulp post -t "testPage"
+statgen post -t "testPage"
 
-gulp post --title "testPage"
+statgen post --title "testPage"
 
-gulp post -t "testPage" -s "test"
+statgen post -t "testPage" -s "test"
 
-gulp post --title "testPage" --slug "test"
+statgen post --title "testPage" --slug "test"
 ```
 > This generates an `md` file in the `posts` directory
 
@@ -67,5 +78,5 @@ Ensuring that you have created a new `markdown` post, you can edit the content a
 Use the following command to generate the site from `markdown` to `html` ready for deployment:
 
 ```
-gulp build
+statgen build
 ```

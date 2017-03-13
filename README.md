@@ -17,6 +17,8 @@ statgen new
 
 ### Creating Pages
 
+TODO: New page templates match template name?
+
 You can generate new pages using the following command:
 
 ```

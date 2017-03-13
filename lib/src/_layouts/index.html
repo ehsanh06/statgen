@@ -4,9 +4,12 @@
     <body>
         {{> nav }}
         <div class="content">
-            <h1>{{ pageData.title }}</h1>
-            
-            {{{ pageData.content }}}
+            <h1>{{ siteData.config.author }}</h1>
+
+            <h2>{{ siteData.config.description.short }}</h2>
+            <p>{{ siteData.config.description.long }}</p>
+
+            {{> recent }} 
         </div>
         {{> footer }}
     </body>

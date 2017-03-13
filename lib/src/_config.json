@@ -1,25 +1,32 @@
 {
-    "author": "Blog Man",
+    "author": "Statgen Blogger",
     "title": "Blog",
-    "description": "Blog generated using Statgen",
+    "description": {
+        "short": "Blog generated using Statgen",
+        "long": "Hi, this a blog site generated using Statgen, a static site generator"
+    },
     "links": [
         {
             "name": "GitHub", 
-            "url": "https://github.com/ehsanh06"
+            "url": "https://github.com"
         },
         {
             "name": "Twitter", 
-            "url": "http://twitter.com/ehsanh06"
+            "url": "http://twitter.com"
         }
     ],
-    "archive": true,
+    "archive": {
+        "show": true,
+        "name": "blog",
+        "order": 1
+    },
     "recentPostLimit": 5,
     "currentMenuClass": "current",
     "paths": {
-        "pages": "_pages/",
-        "posts": "_posts/",
-        "layouts": "_layouts/",
-        "includes": "_includes/",
-        "site": "_site/"
+        "pages": "_pages",
+        "posts": "_posts",
+        "layouts": "_layouts",
+        "includes": "_includes",
+        "site": "_site"
     }
 }

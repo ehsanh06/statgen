@@ -2,11 +2,9 @@
     <div class="logo"></div>
     <nav>
         <ul class="menu">
-            {{#navigation}}
-            <li class="menu__item">
-                <a {{#if active}}class="{{ ../config.currentMenuClass }}" {{/if}} href="{{ url }}">{{ title }}</a>
-            </li>
-            {{/navigation}}
+            {{#siteData.navigation}}
+                <li><a {{#if active}}class="{{ ../siteData.config.currentMenuClass }}" {{/if}} href="{{ url }}">{{ title }}</a></li>
+            {{/siteData.navigation}}
         </ul>
     </nav>
 </header>

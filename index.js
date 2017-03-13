@@ -2,13 +2,13 @@
 
 'use strict';
 
-var program = require('commander');
+const program = require('commander');
 
-var init = require('./lib/init');
-var newSite = require('./lib/new');
-var post = require('./lib/post');
-var page = require('./lib/page');
-var build = require('./lib/build');
+const init = require('./lib/init');
+const newSite = require('./lib/new');
+const post = require('./lib/post');
+const page = require('./lib/page');
+const build = require('./lib/build');
 
 program.version('0.0.1');
 

@@ -23,7 +23,7 @@
   },
   "contributors": [
     "Ehsan Hussain",
-    "Shahid Altaf"
+    "Shahid Altaf <shahid634@gmail.com>"
   ],
   "homepage": "https://github.com/ehsanh06/statgen#readme",
   "repository": {
@@ -33,7 +33,6 @@
   "dependencies": {
     "commander": "^2.9.0",
     "front-matter": "^2.1.0",
-    "fs-extra": "^2.0.0",
     "handlebars": "^4.0.5",
     "marked": "^0.3.5",
     "mkdirp": "^0.5.1",
@@ -41,9 +40,5 @@
     "rimraf": "^2.5.2",
     "underscore": "^1.8.3",
     "yargs": "^4.7.1"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "require-dir": "^0.3.1"
   }
 }

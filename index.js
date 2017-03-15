@@ -10,7 +10,7 @@ const post = require('./lib/post');
 const page = require('./lib/page');
 const build = require('./lib/build');
 
-program.version('0.0.1');
+program.version('0.1.0');
 
 program.command('page')
     .description('creates new page')

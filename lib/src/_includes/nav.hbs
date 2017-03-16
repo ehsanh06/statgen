@@ -1,10 +1,7 @@
-<header>
-    <div class="logo"></div>
-    <nav>
-        <ul class="menu">
-            {{#siteData.navigation}}
-                <li><a {{#if active}}class="{{ ../siteData.config.currentMenuClass }}" {{/if}} href="{{ url }}">{{ title }}</a></li>
-            {{/siteData.navigation}}
-        </ul>
-    </nav>
-</header>
+<nav>
+    <ul class="menu">
+        {{#siteData.navigation}}
+            <li><a {{#if active}}class="{{ ../siteData.config.currentMenuClass }}" {{/if}} href="{{ url }}">{{ title }}</a></li>
+        {{/siteData.navigation}}
+    </ul>
+</nav>

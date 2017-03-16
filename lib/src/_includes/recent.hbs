@@ -1,13 +1,9 @@
-<hr>
-<div>
-    <div>
-        <h2>Articles</h2>
-        <ul>
-            {{#siteData.recentPosts}}
-                <li><a href="/{{ year }}/{{ slug }}/">{{ title }}</a> &mdash; {{ shortDate }}</li>
-            {{ else }}
-                <li>No articles yet!</li>
-            {{/siteData.recentPosts}}
-        </ul>
-    </div>
-</div>
+<h2>Recent articles</h2>
+<ul>
+    {{#siteData.recentPosts}}
+        <li><a href="/{{ year }}/{{ slug }}/">{{ title }}</a> &mdash; {{ shortDate }}</li>
+    {{ else }}
+        <li>No articles yet!</li>
+    {{/siteData.recentPosts}}
+</ul>
+

@@ -4,7 +4,6 @@
 
 const program = require('commander');
 
-const init = require('./lib/init');
 const newSite = require('./lib/new');
 const post = require('./lib/post');
 const page = require('./lib/page');
@@ -37,12 +36,6 @@ program.command('new')
     .description('creates new statgen project')
     .action(function() {
         newSite();
-    });
-
-program.command('init')
-    .description('creates a config.json file')
-    .action(function() {
-        init();
     });
 
 program.parse(process.argv);

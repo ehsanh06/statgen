@@ -2,7 +2,7 @@
 <main>
     <h1>{{ pageData.title }}</h1>
     {{{ pageData.content }}}
-    <p>Posted on {{ pageData.shortDate }}. &nbsp; Tagged in {{# pageData.tags }}
+    <p>Posted on {{ pageData.niceDate }}. Tagged in {{# pageData.tags }}
         <a href="/tag/{{ this }}/">{{ this }}</a> {{/pageData.tags }}
     </p>
     {{> recent }}

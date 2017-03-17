@@ -16,9 +16,8 @@
         }
     ],
     "archive": {
-        "show": true,
-        "name": "blog",
-        "order": 1
+        "name": "archive",
+        "navOrder": 1
     },
     "recentPostLimit": 5,
     "currentMenuClass": "current",

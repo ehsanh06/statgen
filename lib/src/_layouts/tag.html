@@ -1,10 +1,10 @@
 {{> header }}     
 <main>
-    <h1>Tag: {{ pageData.content.name }}</h1>
+    <h1>{{ pageData.heading }}</h1>
     <ul>
-        {{#pageData.content.posts }}
+        {{#pageData.tag.posts }}
         <li><a href="/{{ post.year }}/{{ post.slug }}/">{{ post.title }}</a></li>
-        {{/pageData.content.posts}}
+        {{/pageData.tag.posts}}
     </ul>
 </main>
 {{> footer }}

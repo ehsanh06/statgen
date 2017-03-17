@@ -1,6 +1,6 @@
 {
     "author": "Statgen Bot",
-    "title": "Blog",
+    "name": "Blog",
     "description": {
         "short": "Blog generated using Statgen",
         "long": "Hi, this a blog site generated using Statgen, a static site generator"

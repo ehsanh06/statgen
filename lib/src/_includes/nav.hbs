@@ -1,7 +1,7 @@
 <nav>
-    <ul class="menu">
+    <ul>
         {{#siteData.navigation}}
-            <li><a {{#if active}}class="{{ ../siteData.config.currentMenuClass }}" {{/if}} href="{{ url }}">{{ title }}</a></li>
+            <li><a {{#if active}}class="{{ ../siteData.currentMenuClass }}" {{/if}} href="{{ url }}">{{ title }}</a></li>
         {{/siteData.navigation}}
     </ul>
 </nav>

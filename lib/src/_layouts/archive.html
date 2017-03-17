@@ -1,17 +1,17 @@
 {{> header }}     
 <main>
-    <h1>{{ pageData.title }}</h1>
-    {{#pageData.archive }}
+    <h1>{{ pageData.heading }}</h1>
+    {{#siteData.archive.items }}
     <section>
         <h2>{{ year }}</h2>
         <ul>
             {{#posts}}
-            <li><a href="/{{ year }}/{{ slug }}/">{{ title }}</a> &mdash; {{ shortDate }}</li>
+            <li><a href="/{{ year }}/{{ slug }}/">{{ title }}</a> &mdash; {{ monthDayDate }}</li>
             {{/posts}}
         </ul>
     </section>
     {{ else }}
     <p>No articles yet.</p>
-    {{/pageData.archive}}
+    {{/siteData.archive.items}}
 </main>
 {{> footer }}

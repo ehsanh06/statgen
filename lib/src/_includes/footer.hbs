@@ -1,14 +1,11 @@
-        <h2>Links</h2>
-        <nav>
-            <ul>
-                {{#siteData.config.links}}
-                <li><a href="{{ url }}">{{ name }}</a></li>
-                {{/siteData.config.links}}
-            </ul>
-        </nav>
         <footer>
-            <p>Copyright 2017 - {{ siteData.config.author }}. Built using <a href="#">Statgen</a></p>
+            <p><strong>Links</strong></p>
+            <ul>
+                {{#siteData.links}}
+                <li><a href="{{ url }}">{{ name }}</a></li>
+                {{/siteData.links}}
+            </ul>
+            <p>&copy; Copyright 2017 - {{ siteData.author }}. Built using <a href="https://github.com/ehsanh06/statgen">Statgen</a>.</p>
         </footer>
-    <!--{{ siteData.config.googleTrackingCode }}', 'auto');-->
     </body>
 </html>

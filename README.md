@@ -56,6 +56,8 @@ Once you have created a new page or post, a `.md` file will be created in the re
 |   ├── page.html
 |   ├── post.html
 |   └── tag.html
+├── _pages
+|   └── about.md
 ├── _posts
 |   └── 2017-03-14-first-post.md
 ├── _site
@@ -66,13 +68,16 @@ An overview of what each of these does:
 
 | File/Directory | Description |
 |---|---|
-| _includes | |
-| _layouts |  |
-| _posts |  |
-| _site | This is where the generated site will be placed (by default) once Statgen is done transforming it. It’s probably a good idea to add this to your .gitignore file |
-| _statgen.json | Stores configuration data. |
-| .statgen-build | This helps Statgen keep track of which files have not been modified since the site was last build. It's probably a good idea to add this to your `.gitignore` file. |
+| `_includes` | These are the partials that can be mixed and matched by your layouts and posts to facilitate reuse. |
+| `_layouts` | These are the templates that wrap posts and pages. Here you can add layouts and assign them to the post/page markdown file on an individual basis. |
+| `_pages` | This is where Statgen saves generates pages as `markdown` files. |
+| `_posts` | This is where Statgen saves generates posts as `markdown` files. |
+| `_site` | This is where the generated site will be placed (by default) once Statgen is done buildiing the site. It's probably a good idea to add this to your `.gitignore` file |
+| `_statgen.json` | Stores configuration data. |
+| `.statgen-build` | This helps Statgen keep track of which files have not been modified since the site was last build. It's probably a good idea to add this to your `.gitignore` file. |
 
 ## Configuration
 
 Configuration options are specified in a `_statgen.json` file placed in your site’s root directory.
+
+To be completed...

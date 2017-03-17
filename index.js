@@ -2,15 +2,14 @@
 
 'use strict';
 
-var program = require('commander');
+const program = require('commander');
 
-var init = require('./lib/init');
-var newSite = require('./lib/new');
-var post = require('./lib/post');
-var page = require('./lib/page');
-var build = require('./lib/build');
+const newSite = require('./lib/new');
+const post = require('./lib/post');
+const page = require('./lib/page');
+const build = require('./lib/build');
 
-program.version('0.0.1');
+program.version('1.0.0');
 
 program.command('page')
     .description('creates new page')
@@ -37,12 +36,6 @@ program.command('new')
     .description('creates new statgen project')
     .action(function() {
         newSite();
-    });
-
-program.command('init')
-    .description('creates a config.json file')
-    .action(function() {
-        init();
     });
 
 program.parse(process.argv);

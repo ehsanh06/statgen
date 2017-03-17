@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-    {{> header }}
-    <body>
-        {{> nav }}
-        <div class="content">
-            <h1>{{ post.title }}</h1>
-
-            {{{ post.content }}}
-
-            <p>Posted on {{ post.niceDate }}. &nbsp; Tagged in {{# post.tags }}
-                <a href="/tag/{{ this }}/">{{ this }}</a> {{/post.tags }}
-            </p>
-            {{> recent }}
-        </div>
-        {{> footer }}
-    </body>
-</html>
+{{> header }}     
+<main>
+    <h1>{{ pageData.heading }}</h1>
+    {{{ pageData.post.content }}}
+    <p>Posted on {{ pageData.post.niceDate }}. 
+        Tagged in 
+        {{# pageData.post.tags }}
+            <a href="/tag/{{ this }}/">{{ this }}</a> 
+        {{/pageData.post.tags }}
+    </p>
+    {{> recent }}
+</main>
+{{> footer }}

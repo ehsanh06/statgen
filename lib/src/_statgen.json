@@ -1,0 +1,31 @@
+{
+    "author": "Statgen Bot",
+    "name": "Blog",
+    "description": {
+        "short": "Blog generated using Statgen",
+        "long": "Hi, this a blog site generated using Statgen, a static site generator"
+    },
+    "links": [
+        {
+            "name": "Twitter",
+            "url": "http://twitter.com"
+        },
+        {
+            "name": "Instagram",
+            "url": "http://instagram.com"
+        }
+    ],
+    "archive": {
+        "name": "archive",
+        "navOrder": 1
+    },
+    "recentPostLimit": 5,
+    "currentMenuClass": "current",
+    "paths": {
+        "pages": "_pages",
+        "posts": "_posts",
+        "layouts": "_layouts",
+        "includes": "_includes",
+        "site": "_site"
+    }
+}

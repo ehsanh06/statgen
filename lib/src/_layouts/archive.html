@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-    {{> header }}
-    <body>
-        {{> nav }}
-        <div class="content">
-            <h1>{{ page.title }}</h1>
-            {{{ page.content }}} {{#archive }}
-            <div>
-                <h2>{{ year }}</h2>
-                <ul>
-                    {{#posts}}
-                    <li><a href="/{{ year }}/{{ slug }}/">{{ title }}</a> &mdash; {{ shortDate }}</li>
-                    {{/posts}}
-                </ul>
-            </div>
-            {{ else }}
-            <p>No articles yet.</p>
-            {{/archive}}
-        </div>
-        {{> footer }}
-    </body>
-</html>
+{{> header }}     
+<main>
+    <h1>{{ pageData.heading }}</h1>
+    {{#siteData.archive.items }}
+    <section>
+        <h2>{{ year }}</h2>
+        <ul>
+            {{#posts}}
+            <li><a href="/{{ year }}/{{ slug }}/">{{ title }}</a> &mdash; {{ monthDayDate }}</li>
+            {{/posts}}
+        </ul>
+    </section>
+    {{ else }}
+    <p>No articles yet.</p>
+    {{/siteData.archive.items}}
+</main>
+{{> footer }}

@@ -1,7 +1,8 @@
 {
   "name": "statgen",
-  "description": "A static website and blog generating CLI",
+  "description": "A CLI based static website and blog generator",
   "keywords": [
+    "statgen",
     "static",
     "blog",
     "generator",
@@ -9,7 +10,7 @@
     "jekyll",
     "markdown"
   ],
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "engines": {
     "node": ">= 0.10.0"
@@ -23,7 +24,7 @@
   },
   "contributors": [
     "Ehsan Hussain",
-    "Shahid Altaf"
+    "Shahid Altaf <shahid634@gmail.com>"
   ],
   "homepage": "https://github.com/ehsanh06/statgen#readme",
   "repository": {
@@ -33,17 +34,11 @@
   "dependencies": {
     "commander": "^2.9.0",
     "front-matter": "^2.1.0",
-    "fs-extra": "^2.0.0",
     "handlebars": "^4.0.5",
     "marked": "^0.3.5",
     "mkdirp": "^0.5.1",
     "moment": "^2.13.0",
-    "rimraf": "^2.5.2",
     "underscore": "^1.8.3",
     "yargs": "^4.7.1"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "require-dir": "^0.3.1"
   }
 }

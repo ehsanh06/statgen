@@ -1,82 +1,83 @@
 # Statgen 
 
-Statgen is a in-built CLI that is designed to be a simple static website generator using, `node`, `markdown` and `handlebars`. 
+Statgen is a Jekyll-inspired static blog-aware site generator, using `NodeJS`, `Markdown` and `Handlebars`. It offers an simple easy-to-use CLI, making site generation effortless.
 
-## Usage
+## Installation
 
-### New Project
-
-You can create a new project usng the following command:
+Install Statgen with NPM. Run the following command to install `statgen` globally at a terminal prompt.
 
 ```
-Usage:
-
-statgen new
-
+$ npm install statgen -g
 ```
 
-### Creating Pages
+## Basic Usage
 
-You can generate new pages using the following command:
-
-```
-Usage:
-
-statgen page [ -t | --title ] <Your page title> [ -s | --slug ] <Your URL Slug>
-```
-> -t or --title is a mandatory argument to input
-
-> -s or --slug is an optional argument to input
+Create a new `statgen` site using the current folder by using:
 
 ```
-Examples:
-
-statgen page -t "testPage"
-
-statgen page --title "testPage"
-
-statgen page -t "testPage" -s "test"
-
-statgen page --title "testPage" --slug "test"
+$ statgen new
 ```
 
-> This generates an `md` file in the `pages` directory
-
-Ensuring that you have created a new `markdown` page, you can edit the content and default metadata.
-
-### Creating Posts
-
-You can generate new posts in your pages, using the following command:
+Once you have created a new `statgen` site, you can then generate a static build using the command below. This will read the `markdown` files and converted in to `html`.
 
 ```
-Usage:
-
-statgen post [ -t | --title ] <Your page title> [-s | --slug ] <Your URL Slug>
+$ statgen build
 ```
 
-> -t or --title is a mandatory argument to input
+At this stage, your site is ready for deployment.
 
-> -s or --slug is an optional argument to input
+**Pages and Posts**
 
-```
-Examples:
-
-statgen post -t "testPage"
-
-statgen post --title "testPage"
-
-statgen post -t "testPage" -s "test"
-
-statgen post --title "testPage" --slug "test"
-```
-> This generates an `md` file in the `posts` directory
-
-Ensuring that you have created a new `markdown` post, you can edit the content and default metadata.
-
-## Generating the static site
-
-Use the following command to generate the site from `markdown` to `html` ready for deployment:
+You can create new posts and pages using either of the following commands:
 
 ```
-statgen build
+# Generate a page markdown file
+$ statgen page -t "About" -s "about"
+$ statgen page --title "About" --slug "about"
+
+# Generate a post markdown file
+$ statgen post -t "First post"
+$ statgen post --title "First post"
 ```
+
+Once you have created a new page or post, a `.md` file will be created in the relavent directory. You can now add `markdown` content to the file. Run `statgen build` again to re-generate the site.
+
+## Directory Structure
+
+```
+├── _includes
+|   ├── footer.hbs
+|   ├── header.hbs
+|   ├── nav.hbs
+|   └── recent.hbs
+├── _layouts
+|   ├── archive.html
+|   ├── index.html
+|   ├── page.html
+|   ├── post.html
+|   └── tag.html
+├── _pages
+|   └── about.md
+├── _posts
+|   └── 2017-03-14-first-post.md
+├── _site
+├── _statgen.json
+└── .statgen-build
+```
+An overview of what each of these does:
+
+| File/Directory | Description |
+|---|---|
+| `_includes` | These are the partials that can be mixed and matched by your layouts and posts to facilitate reuse. |
+| `_layouts` | These are the templates that wrap posts and pages. Here you can add layouts and assign them to the post/page markdown file on an individual basis. |
+| `_pages` | This is where Statgen saves generates pages as `markdown` files. |
+| `_posts` | This is where Statgen saves generates posts as `markdown` files. |
+| `_site` | This is where the generated site will be placed (by default) once Statgen is done buildiing the site. It's probably a good idea to add this to your `.gitignore` file |
+| `_statgen.json` | Stores configuration data. |
+| `.statgen-build` | This helps Statgen keep track of which files have not been modified since the site was last build. It's probably a good idea to add this to your `.gitignore` file. |
+
+## Configuration
+
+Configuration options are specified in a `_statgen.json` file placed in your site’s root directory.
+
+To be completed...

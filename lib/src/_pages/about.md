@@ -3,8 +3,8 @@ date: 2017-03-20T10:33:31+00:00
 layout: page
 order: 0
 navigation: true
-navigationTitle: "about"
+navigationTitle: "About"
 slug: about
-title: "about"
+title: "About"
 ---
-Insert your content here
+A page about Statgen...

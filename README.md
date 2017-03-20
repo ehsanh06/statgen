@@ -115,6 +115,8 @@ Any added properties add to the `JSON` object will be available via `siteData` i
 Below is a list of features that will be potentially added to Statgen in the near future.
 
 - Default example `CSS` file to give default styling
+- Posts archive display configuration
+- Posts list pagination
 - Assets folder copied into the build `site` folder during build task
 - `SASS` pre-processing during build task
 - Data files in `_data` to be accessed via `siteData` in templates

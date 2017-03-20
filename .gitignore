@@ -1,10 +1,5 @@
 .DS_Store
 node_modules
+npm-debug.log
 spec.txt
 .vscode
-/_site
-/_includes
-/_layouts
-/_pages
-/_posts
-/_config.json

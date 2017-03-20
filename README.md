@@ -59,7 +59,7 @@ Once you have run a new page or post task, a `.md` file will be created in the r
 ├── _pages
 |   └── about.md
 ├── _posts
-|   └── 2017-03-14-first-post.md
+|   └── 20-03-17-first-post.md
 ├── _site
 ├── _statgen.json
 └── .statgen-build

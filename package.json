@@ -10,7 +10,7 @@
     "jekyll",
     "markdown"
   ],
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "engines": {
     "node": ">= 0.10.0"

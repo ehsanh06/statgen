@@ -1,6 +1,6 @@
 # Statgen 
 
-Statgen is a Jekyll-inspired static blog-aware site generator, using `NodeJS`, `Markdown` and `Handlebars`. It offers an simple easy-to-use CLI, making site generation effortless.
+Statgen is a Jekyll-inspired static blog-aware site generator, using `NodeJS`, `Markdown` and `Handlebars`. It offers a simple CLI, making site generation effortless.
 
 ## Installation
 
@@ -10,21 +10,21 @@ Install Statgen with NPM. Run the following command to install `statgen` globall
 $ npm install statgen -g
 ```
 
-## Basic Usage
+## Usage
 
-Create a new `statgen` site using the current folder by using:
+Create a new `statgen` site in the current folder by using:
 
 ```
 $ statgen new
 ```
 
-Once you have created a new `statgen` site, you can then generate a static build using the command below. This will read the `markdown` files and converted in to `html`.
+This will create default source files and folders, along with a configuration file. Once this is in place, you can then run a build task like below.
 
 ```
 $ statgen build
 ```
 
-At this stage, your site is ready for deployment.
+At this point, the site has been coverted into `html` files and your site is ready for deployment.
 
 **Pages and Posts**
 
@@ -40,7 +40,7 @@ $ statgen post -t "First post"
 $ statgen post --title "First post"
 ```
 
-Once you have created a new page or post, a `.md` file will be created in the relavent directory. You can now add `markdown` content to the file. Run `statgen build` again to re-generate the site.
+Once you have run a new page or post task, a `.md` file will be created in the relavent directory. You can edit the file by adding `markdown` content. Run the build task to re-generate the site.
 
 ## Directory Structure
 
@@ -68,8 +68,8 @@ An overview of what each of these does:
 
 | File/Directory | Description |
 |---|---|
-| `_includes` | These are the partials that can be mixed and matched by your layouts and posts to facilitate reuse. |
-| `_layouts` | These are the templates that wrap posts and pages. Here you can add layouts and assign them to the post/page markdown file on an individual basis. |
+| `_includes` | These are the partials that can be mixed and matched by your layouts to facilitate reuse. |
+| `_layouts` | These are the templates that wrap posts and pages. Here you can add layouts and assign them to the markdown files on an individual basis. |
 | `_pages` | This is where Statgen saves generates pages as `markdown` files. |
 | `_posts` | This is where Statgen saves generates posts as `markdown` files. |
 | `_site` | This is where the generated site will be placed (by default) once Statgen is done buildiing the site. It's probably a good idea to add this to your `.gitignore` file |
@@ -78,6 +78,44 @@ An overview of what each of these does:
 
 ## Configuration
 
-Configuration options are specified in a `_statgen.json` file placed in your site’s root directory.
+Configuration options are specified in a `_statgen.json` file placed in your site’s root directory. ***Please DO NOT delete any of the default JSON object properties in this file***. You can, however, update the values of the properties to suit the needs of your project.
 
-To be completed...
+Any added properties add to the `JSON` object will be available via `siteData` in templates. See below:
+
+`_statgen.json`
+
+```
+...
+
+"paths": {
+        "pages": "_pages",
+        "posts": "_posts",
+        "layouts": "_layouts",
+        "includes": "_includes",
+        "site": "_site"
+    },
+    "googleTrackingCode": "UA-XXXXX-X"
+}
+```
+
+`_includes/footer.hbs`
+```
+...
+    <script>
+        window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+        ga('create', '{{ siteData.googleTrackingCode }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+...
+```
+
+## Backlog
+
+Below is a list of features that will be potentially added to Statgen in the near future.
+
+- Assets folder copied into the build `site` folder during build task
+- `SASS` pre-processing during build task
+- Data files in `_data` to be accessed via `siteData` in templates
+
+

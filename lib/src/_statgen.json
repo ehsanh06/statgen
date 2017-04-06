@@ -26,6 +26,8 @@
         "posts": "_posts",
         "layouts": "_layouts",
         "includes": "_includes",
-        "site": "_site"
+        "site": "_site",
+        "styles": "_assets/scss/styles.scss",
+        "images": "_assets/img"
     }
 }

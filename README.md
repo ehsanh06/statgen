@@ -26,7 +26,7 @@ $ statgen build
 
 At this point, the site has been coverted into `html` files and your site is ready for deployment.
 
-**Pages and Posts**
+### Pages and Posts
 
 You can create new posts and pages using either of the following commands:
 
@@ -41,6 +41,10 @@ $ statgen post --title "First post"
 ```
 
 Once you have run a new page or post task, a `.md` file will be created in the relavent directory. You can edit the file by adding `markdown` content. Run the build task to re-generate the site.
+
+## How It Works
+
+To be completed...
 
 ## Directory Structure
 
@@ -110,15 +114,24 @@ Any added properties add to the `JSON` object will be available via `siteData` i
 ...
 ```
 
+## Change Log
+
+### 2.0.0
+- Default CSS styling added using SASS pre-processing.
+- The compiled CSS is injected into the `<head>` tag of the HTML files during site `build` task.
+- `assets` property added to config file. This points to static assets that will to be copied into the compiled site directory.
+- Minor bug fixes and under the hood improvements.
+
+### 1.0.4
+- Archive list year grouping now in reverse chronological order.
+- Build optimisations
+
 ## Backlog
 
 Below is a list of features that will be potentially added to Statgen in the near future.
 
-- Default example `CSS` file to give default styling
-- Posts archive display configuration
+- Posts list to be displayed in a summary or title-only style by configuration
 - Posts list pagination
-- Assets folder copied into the build `site` folder during build task
-- `SASS` pre-processing during build task
 - Data files in `_data` to be accessed via `siteData` in templates
 
 

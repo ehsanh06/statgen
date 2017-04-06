@@ -1,0 +1,36 @@
+html {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $base-font-color;
+}
+
+p, ul, ol {
+    margin-top: 1.33em;
+    margin-bottom: 1.618em
+}
+
+a {
+    color: $link-color;
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+code,
+pre {
+  background: #eee;
+  border-bottom: 1px solid #d8dee9;
+  color: #a7adba;
+}
+
+pre {
+    padding: 1em;
+    border-left: 2px solid #69c;
+}
+

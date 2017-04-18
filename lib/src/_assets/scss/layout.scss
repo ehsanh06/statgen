@@ -1,6 +1,10 @@
+html {
+    background-color: $background-color;
+}
+
 body {
     margin: 0 auto;
-    max-width: 50em;
+    max-width: 60em;
     padding: 4em 2em;
 }
 
@@ -8,8 +12,11 @@ img {
     margin: 1.4em 0;
 }
 
-hr {
-    border-top: 1px solid #666;
-    margin-top: 2em;
-    padding-top: 1em;
+footer {
+    margin-top: 2.8em;
+    padding-top: 0.4em;
+    border-top: 2px solid $base-font-color;
+    ul {
+        margin-bottom: 1.2em;
+    }
 }

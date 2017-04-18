@@ -1,16 +1,9 @@
-/* 
-.u-container {
-}
-
-.u-section {
-}
-*/
-
 .u-clearfix {
     overflow: hidden;
 }
 
 .u-list-inline {
+    margin-left: 0;
     > * {
         display: inline-block;
         margin-right: 1em;

@@ -19,6 +19,7 @@
         "name": "archive",
         "navOrder": 1
     },
+    "showHomeInNavigation": true,
     "recentPostLimit": 5,
     "currentMenuClass": "current",
     "paths": {

@@ -1,0 +1,21 @@
+header {
+    overflow: hidden;
+    .logo {
+        float: left;
+        margin-right: 3em;
+        a {
+            border-bottom: 0;
+            font-weight: 900;
+            font-size: 1.1em;
+        }
+    }
+    .nav {
+        float: right;
+        ul {
+            li {
+                margin-right: 0;
+                margin-left: 1em;
+            }
+        }
+    }
+}
